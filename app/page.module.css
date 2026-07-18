@@ -1,142 +1,534 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
+/* ── Hero ─────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100svh;
   display: flex;
-  flex: 1;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  overflow: hidden;
+  background: var(--bg-primary);
 }
 
-.main {
-  display: flex;
-  flex: 1;
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10,10,10,0.94) 0%,
+    rgba(10,10,10,0.65) 60%,
+    rgba(10,10,10,0.45) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  padding: 100px 20px 80px;
+  max-width: 680px;
   width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
 }
 
-.intro {
+.heroEyebrow {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
+.heroDash {
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+  display: block;
+}
+
+.heroEyebrowText {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.heroTitle {
+  font-size: clamp(40px, 8vw, 88px);
+  font-weight: 400;
+  line-height: 1.05;
   color: var(--text-primary);
+  margin-bottom: 20px;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
+.heroTitleItalic {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.heroSub {
+  font-size: clamp(14px, 2vw, 16px);
   color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 36px;
+  max-width: 460px;
 }
 
-.intro a {
-  font-weight: 500;
+.heroCTAs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.heroStats {
+  position: absolute;
+  bottom: 48px;
+  right: 0;
+  z-index: 1;
+  display: flex;
+}
+
+.heroStat {
+  padding: 22px 28px;
+  border-left: 1px solid var(--border);
+  text-align: center;
+}
+
+.heroStatNum {
+  font-family: var(--font-playfair), serif;
+  font-size: 30px;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.heroStatLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgb(212, 212, 212);
+}
+
+/* ── Services ─────────────────────────────────── */
+.services {
+  padding: 80px 0;
+  background: var(--bg-primary);
+}
+
+.sectionHead {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-size: clamp(28px, 5vw, 52px);
+}
+
+.sectionSub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  max-width: 440px;
+  margin: 12px auto 0;
+  line-height: 1.7;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.serviceCard {
+  background: var(--bg-card);
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition);
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.serviceCard:hover { background: var(--bg-card-hover); }
+.serviceCard:hover::before { transform: scaleX(1); }
+
+.serviceIcon {
+  font-size: 24px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.serviceNum {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-family: var(--font-playfair), serif;
+  font-size: 44px;
+  color: rgba(201,168,108,0.07);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.serviceTitle {
+  font-family: var(--font-playfair), serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.serviceDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.servicePrice {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.servicesCTA {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* ── Team Preview ─────────────────────────────── */
+.team {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+}
+
+.teamInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.teamContent { max-width: 460px; }
+
+.teamTitle { font-size: clamp(28px, 4vw, 48px); }
+
+.teamText {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-top: 14px;
+  margin-bottom: 28px;
+}
+
+.teamPhotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.teamPhoto {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-card);
+}
+
+.teamPhoto:first-child { margin-top: 28px; }
+
+.teamPhotoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.teamPhoto:hover .teamPhotoImg { transform: scale(1.04); }
+
+.teamPhotoLabel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  padding: 28px 14px 14px;
+}
+
+.teamPhotoName {
+  font-family: var(--font-playfair), serif;
+  font-size: 15px;
+  color: var(--text-primary);
+  display: block;
+}
+
+.teamPhotoRole {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── Gallery ──────────────────────────────────── */
+.gallery {
+  padding: 80px 0;
+  background: var(--bg-primary);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 220px 220px;
+  grid-auto-rows: 220px;
+  gap: 6px;
+  margin-top: 48px;
+}
+
+.galleryItem {
+  overflow: hidden;
+  border-radius: var(--radius);
+  position: relative;
+  cursor: pointer;
+  background: var(--bg-card);
+}
+
+.galleryItem:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.galleryItem:nth-child(4) {
+  grid-column: span 2;
+}
+
+.galleryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.galleryOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(201,168,108,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.galleryOverlay svg {
+  color: white;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.galleryItem:hover .galleryImg { transform: scale(1.06); }
+.galleryItem:hover .galleryOverlay { background: rgba(201,168,108,0.25); }
+.galleryItem:hover .galleryOverlay svg { opacity: 1; transform: scale(1); }
+
+.galleryCTA {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ── Testimonials ─────────────────────────────── */
+.testimonials {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.testimonialCard {
+  background: var(--bg-card);
+  padding: 36px 28px;
+}
+
+.testimonialStars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+  color: var(--gold);
+}
+
+.testimonialText {
+  font-family: var(--font-playfair), serif;
+  font-size: 17px;
+  color: var(--text-primary);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonialAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-playfair), serif;
+  font-size: 14px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.testimonialName {
+  font-size: 13px;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+.testimonialService {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
 }
 
-.ctas a {
+/* ── Before & After ──────────────────────────── */
+.beforeAfter {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+}
+
+/* ── Gift Cards ───────────────────────────────── */
+.giftCards {
+  padding: 80px 0;
+  background: var(--bg-primary);
+}
+
+
+/* ── CTA Banner ───────────────────────────────── */
+.ctaBanner {
+  padding: 80px 0;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.ctaBanner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(201,168,108,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ctaTitle {
+  font-size: clamp(30px, 5vw, 64px);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.ctaSub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  position: relative;
+}
+
+.ctaButtons {
   display: flex;
+  gap: 12px;
   justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 0 20px;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 1024px) {
+  .servicesGrid { grid-template-columns: repeat(2, 1fr); }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px 200px 200px;
+  }
+  .galleryItem:first-child { grid-column: span 2; grid-row: span 1; }
+  .galleryItem:nth-child(4) { grid-column: span 1; }
+
+  .testimonialsGrid { grid-template-columns: 1fr 1fr; }
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+@media (max-width: 768px) {
+  .heroStats { display: none; }
+
+  .teamInner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .teamContent { max-width: 100%; }
+
+  .teamPhoto:first-child { margin-top: 0; }
+
+  .testimonialsGrid { grid-template-columns: 1fr; }
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+@media (max-width: 640px) {
+  .services,
+  .team,
+  .gallery,
+  .beforeAfter,
+  .testimonials,
+  .giftCards,
+  .ctaBanner {
+    padding: 60px 0;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-}
+  .servicesGrid { grid-template-columns: 1fr; }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
+  .serviceCard { padding: 28px 20px; }
 
-  .intro {
-    gap: 16px;
+  .galleryGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 160px 160px 160px;
+    gap: 4px;
   }
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
+  .galleryItem:first-child { grid-column: span 2; }
+  .galleryItem:nth-child(4) { grid-column: span 2; }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+  .galleryOverlay { opacity: 1; background: linear-gradient(transparent 40%, rgba(0,0,0,0.6)); }
+  .galleryOverlay svg { display: none; }
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+  .teamPhotos { grid-template-columns: 1fr 1fr; }
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+  .heroCTAs { flex-direction: column; }
+  .ctaButtons { flex-direction: column; align-items: center; }
 }

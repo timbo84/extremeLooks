@@ -1,0 +1,746 @@
+.pageWrap {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  padding-top: 100px;
+}
+
+.header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0 40px;
+  text-align: center;
+}
+
+.headerTitle {
+  font-size: clamp(32px, 4vw, 52px);
+  margin-bottom: 12px;
+}
+
+.headerSub {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* Steps */
+.stepsBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 32px 24px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stepLine {
+  width: 80px;
+  height: 1px;
+  background: var(--border);
+}
+
+.stepLineDone {
+  background: var(--gold);
+}
+
+.stepCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+
+.stepCircleActive {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--bg-primary);
+}
+
+.stepCircleDone {
+  border-color: var(--gold);
+  background: transparent;
+  color: var(--gold);
+}
+
+.stepLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stepLabelActive {
+  color: var(--gold);
+}
+
+/* Body */
+.body {
+  padding: 56px 0 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Step panels */
+.panel {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.panelHead {
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panelTitle {
+  font-family: var(--font-playfair), serif;
+  font-size: 22px;
+  color: var(--text-primary);
+}
+
+.panelSub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Stylist cards */
+.stylistGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  padding: 2px;
+}
+
+.stylistCard {
+  background: var(--bg-secondary);
+  padding: 28px 24px;
+  cursor: pointer;
+  transition: background var(--transition);
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.stylistCard:hover {
+  background: var(--bg-card-hover);
+}
+
+.stylistCardSelected {
+  border-color: var(--gold);
+  background: rgba(201, 168, 108, 0.06);
+}
+
+.stylistPhoto {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: 2px solid var(--border);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.stylistPhotoSelected {
+  border-color: var(--gold);
+}
+
+.stylistName {
+  font-family: var(--font-playfair), serif;
+  font-size: 17px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.stylistRole {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.stylistBio {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.stylistSpecialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--text-muted);
+}
+
+.tagGold {
+  border-color: var(--border-gold);
+  color: var(--gold);
+}
+
+.checkMark {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-primary);
+}
+
+/* Service select */
+.serviceList {
+  padding: 8px;
+}
+
+.serviceOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: background var(--transition);
+  border: 2px solid transparent;
+  margin-bottom: 2px;
+}
+
+.serviceOption:hover {
+  background: var(--bg-secondary);
+}
+
+.serviceOptionSelected {
+  border-color: var(--gold);
+  background: rgba(201, 168, 108, 0.06);
+}
+
+.serviceOptionLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.serviceOptionIcon {
+  font-size: 22px;
+}
+
+.serviceOptionName {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.serviceOptionDuration {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.serviceOptionPrice {
+  font-family: var(--font-playfair), serif;
+  font-size: 18px;
+  color: var(--gold);
+}
+
+/* Date/time */
+.dateTimeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.calSection {
+  padding: 24px;
+  background: var(--bg-secondary);
+}
+
+.calTitle {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.calHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.calMonth {
+  font-family: var(--font-playfair), serif;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.calNav {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.calNav:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.calGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calDayLabel {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 6px 0;
+}
+
+.calDay {
+  text-align: center;
+  padding: 7px 4px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background var(--transition), color var(--transition);
+}
+
+.calDay:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.calDaySelected {
+  background: var(--gold) !important;
+  color: var(--bg-primary) !important;
+  font-weight: 700;
+}
+
+.calDayEmpty {
+  cursor: default;
+}
+
+.calDayPast {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.calDayToday {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* Time slots */
+.timeSection {
+  padding: 24px;
+  background: var(--bg-card);
+}
+
+.timeSlots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.timeSlot {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  background: none;
+}
+
+.timeSlot:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+.timeSlotSelected {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg-primary);
+  font-weight: 700;
+}
+
+.timeSlotUnavailable {
+  opacity: 0.25;
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: line-through;
+}
+
+/* Customer form */
+.form {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formField label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.formField input,
+.formField textarea,
+.formField select {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 11px 14px;
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.formField input:focus,
+.formField textarea:focus,
+.formField select:focus {
+  border-color: var(--gold);
+}
+
+.formField textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Summary sidebar */
+.summary {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+}
+
+.summaryHead {
+  background: var(--gold);
+  padding: 20px 24px;
+}
+
+.summaryHeadTitle {
+  font-family: var(--font-playfair), serif;
+  font-size: 18px;
+  color: var(--bg-primary);
+}
+
+.summaryBody {
+  padding: 24px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+
+.summaryRow:last-of-type {
+  border-bottom: none;
+}
+
+.summaryLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.summaryValue {
+  font-size: 14px;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.summaryEmpty {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: right;
+}
+
+.summaryTotal {
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-gold);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summaryTotalLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.summaryTotalValue {
+  font-family: var(--font-playfair), serif;
+  font-size: 28px;
+  color: var(--gold);
+}
+
+.summaryNote {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Nav buttons */
+.navBtns {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 32px;
+  border-top: 1px solid var(--border);
+}
+
+/* Confirmation */
+.confirmation {
+  text-align: center;
+  padding: 72px 48px;
+}
+
+.confirmIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(201, 168, 108, 0.1);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  margin: 0 auto 28px;
+}
+
+.confirmTitle {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.confirmText {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 440px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.confirmDetails {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  max-width: 480px;
+  margin: 0 auto 36px;
+  text-align: left;
+}
+
+.confirmDetailRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.confirmDetailRow:last-child {
+  border-bottom: none;
+}
+
+.confirmDetailKey {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.confirmDetailValue {
+  color: var(--text-primary);
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    position: static;
+  }
+
+  .stylistGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dateTimeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .stepsBar {
+    gap: 0;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 16px 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .stepLine {
+    width: 28px;
+  }
+
+  .stepLabel {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageWrap {
+    padding-top: 70px;
+  }
+
+  .header {
+    padding: 32px 0 24px;
+  }
+
+  .headerTitle {
+    font-size: 28px;
+  }
+
+  .body {
+    padding: 24px 0 60px;
+  }
+
+  .stylistGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stylistCard {
+    padding: 20px 16px;
+  }
+
+  .serviceOption {
+    padding: 14px 16px;
+  }
+
+  .form {
+    padding: 20px 16px;
+  }
+
+  .navBtns {
+    padding: 16px;
+  }
+
+  .confirmation {
+    padding: 40px 20px;
+  }
+
+  .confirmDetails {
+    padding: 16px;
+  }
+
+  .calSection,
+  .timeSection {
+    padding: 16px;
+  }
+
+  .timeSlots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .summaryBody {
+    padding: 16px;
+  }
+
+  .summaryHead {
+    padding: 16px 20px;
+  }
+}

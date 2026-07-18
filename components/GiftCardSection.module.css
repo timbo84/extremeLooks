@@ -1,0 +1,162 @@
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Gift card visual ─────────────────────────── */
+.visual {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.card {
+  width: min(320px, 100%);
+  aspect-ratio: 1.586;
+  background: linear-gradient(135deg, #1e1b12 0%, #2b2214 55%, #1a1a12 100%);
+  border: 1px solid var(--border-gold);
+  border-radius: 12px;
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(201, 168, 108, 0.06);
+}
+
+/* Subtle radial glow */
+.cardGlow {
+  position: absolute;
+  top: -60%;
+  left: -30%;
+  width: 170%;
+  height: 170%;
+  background: radial-gradient(ellipse at 38% 32%, rgba(201, 168, 108, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.cardBrand {
+  font-family: var(--font-playfair), serif;
+  font-size: 15px;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+}
+
+.cardIcon {
+  color: var(--gold);
+  opacity: 0.45;
+}
+
+.cardAmount {
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(38px, 7vw, 54px);
+  color: var(--text-primary);
+  line-height: 1;
+  position: relative;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.cardLabel {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.cardExpiry {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.65;
+}
+
+/* ── Info side ────────────────────────────────── */
+.title {
+  font-size: clamp(26px, 4vw, 46px);
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  max-width: 420px;
+}
+
+.amounts {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.amtBtn {
+  padding: 12px 22px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  min-width: 76px;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+}
+
+.amtBtn:hover {
+  border-color: var(--border-gold);
+  color: var(--text-primary);
+}
+
+.amtBtnActive {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201, 168, 108, 0.08);
+}
+
+.buyRow {
+  margin-top: 28px;
+}
+
+.fine {
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner { gap: 36px; }
+  .card { max-width: 340px; }
+}

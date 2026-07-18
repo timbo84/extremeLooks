@@ -1,0 +1,201 @@
+.pageWrap {
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 160px 0 80px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.heroTitle {
+  font-size: clamp(36px, 5vw, 64px);
+  margin-bottom: 16px;
+}
+
+.heroSub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+.body {
+  padding: 80px 0;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.card {
+  background: var(--bg-card);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+.photoWrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+}
+
+.instaBtn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  transition: background var(--transition);
+}
+
+.instaBtn:hover {
+  background: var(--gold);
+  color: var(--bg-primary);
+}
+
+.cardBody {
+  padding: 36px 32px;
+  border-left: 1px solid var(--border);
+}
+
+.cardMeta {
+  margin-bottom: 8px;
+}
+
+.experience {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.cardName {
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+
+.cardRole {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.cardBio {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--border-gold);
+  border-radius: 2px;
+  color: var(--gold);
+}
+
+.certList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.certItem {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding-left: 14px;
+  position: relative;
+}
+
+.certItem::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.joinBanner {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+}
+
+.joinTitle {
+  font-size: clamp(28px, 4vw, 48px);
+  margin-bottom: 14px;
+}
+
+.joinSub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1100px) {
+  .teamGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 110px 0 56px; }
+  .heroTitle { font-size: 32px; }
+  .joinBanner { padding: 60px 0; }
+  .joinTitle { font-size: 28px; }
+  .body { padding: 48px 0; }
+}
+
+@media (max-width: 700px) {
+  .card { grid-template-columns: 1fr; }
+  .photoWrap { min-height: 240px; }
+  .cardBody {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding: 24px 20px;
+  }
+  .cardName { font-size: 22px; }
+}
+
+@media (max-width: 480px) {
+  .tags { gap: 4px; }
+  .tag { font-size: 10px; padding: 3px 8px; }
+}
